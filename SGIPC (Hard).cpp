@@ -2,7 +2,7 @@
 using namespace std;
 int mod=1e9+7;
  
- long int dp[4001][4001];
+long int dp[4001][4001];
 long int back(int n, int k){
 	 if (k == 0 && n == 0)
     return dp[n][k]=1;
