@@ -45,37 +45,30 @@ int main()
 	//cin>>T;
 	 while(T--){
 	 	
-	 	cin>>n>>m>>max_t;
+		 	cin>>n>>m>>max_t;
+	
+	
+	    beauty.resize(n);
+	    u.resize(m);
+	    v.resize(m);
+	    t.resize(m);
 
-
-    beauty.resize(n);
-    u.resize(m);
-    v.resize(m);
-    t.resize(m);
-
-cin>>n;
-    for(int i=0;i<n;i++)
-        cin>>beauty[i];
-cin>>m;
-    for(int i=0;i<m;i++)
-        cin>>u[i];
-cin>>m;
-    for(int i=0;i<m;i++)
-        cin>>v[i];
-cin>>m;
-    for(int i=0;i<m;i++)
-        cin>>t[i];
-
-
-
-    solve();
-
-    cout<<ans<<endl;
-
-
-	 	
-	 	
-	 }
+		cin>>n;
+		    for(int i=0;i<n;i++)
+		        cin>>beauty[i];
+		cin>>m;
+		    for(int i=0;i<m;i++)
+		        cin>>u[i];
+		cin>>m;
+		    for(int i=0;i<m;i++)
+		        cin>>v[i];
+		cin>>m;
+		    for(int i=0;i<m;i++)
+		        cin>>t[i];
+		    solve();
+		
+		    cout<<ans<<endl;
+	}
 	
 	
 return 0;
