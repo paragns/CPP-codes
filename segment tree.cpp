@@ -50,7 +50,7 @@ int main(){
 	 	//for(int i=1;i<15;i++)cout<<tree[i]<<endl;
 	 	cout<<query(1,0,n-1,1,6);
 	 	int indx,val;
-	 	cin>>indx>>val
+	 	cin>>indx>>val;
 		 update(1,0,n-1,indx,val);
 	 }
 return 0;
