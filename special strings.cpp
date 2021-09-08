@@ -5,12 +5,15 @@ using namespace std;
 #define inf INT_MAX
 #define minf INT_MIN
 
-int func(string &A, int x, int y){
-	if(x>y)return 0;
-	if(x==y)return 1;
-	if(A[x]==A[y])return func(A,x+1,y-1);
-	int p=1+func(A,x+1,y-1);
-	int q=min(1+func(A,x+1,y),1+func(A,x,y-1));
+int func(string &A, int x, int y,int inter){
+	int n=A.size();
+	if(x>=inter and y>=n)return 0;
+	if(x>=inter)return (n-y);
+	if(y>=n)return (inter-x);
+	//if(x==y)return 1;
+	if(A[x]==A[y])return func(A,x+1,y+1,inter);
+	int p=1+func(A,x+1,y+1,inter);
+	int q=min(1+func(A,x+1,y,inter),1+func(A,x,y+1,inter));
 	return min(p,q);
 }
 int main(){
@@ -20,13 +23,19 @@ int main(){
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
-	 	string A;
+	 	
+		 string A;
 	 	cin>>A;
 	 	int n=A.size();
-	 	cout<<func(A,0,n-1);
+	 	if(n==1)return 1;
+	 	int ans=inf;
+	 	for(int i=0;i<n;i++){
+			ans=min(ans,func(A,0,i,i));
+		}
+		cout<<ans;
 	}
 return 0;
 }
-//xxyy
+//xeeyxy
 
 
