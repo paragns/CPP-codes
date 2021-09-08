@@ -27,9 +27,8 @@ int main(){
 		 string A;
 	 	cin>>A;
 	 	int n=A.size();
-	 	if(n==1)return 1;
 	 	int ans=inf;
-	 	for(int i=0;i<n;i++){
+	 	for(int i=n/2-1;i<=n/2+1;i++){
 			ans=min(ans,func(A,0,i,i));
 		}
 		cout<<ans;
