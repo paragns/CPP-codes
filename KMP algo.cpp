@@ -15,11 +15,9 @@ vector<int> LPS(string &pat){
 			j++;
 		}
 		lps[i]=j;
-		
 	}
 	return lps;
 }
-  
 // Prints occurrences of txt[] in pat[]
 void KMPSearch(string pat, string txt,  vector<int>&lps)
 {
@@ -41,8 +39,6 @@ void KMPSearch(string pat, string txt,  vector<int>&lps)
             cout<<"Found pattern at index "<<i-j<<endl;
             j = lps[j - 1];
         }
-  
-       
     }
 } 
 
