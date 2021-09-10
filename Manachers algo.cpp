@@ -23,7 +23,8 @@ int main(){
 			 while(i-k>=0 and i+k<n and A[i-k]==A[i+k]){
 			 	k++;
 			 }
-			 odd[i]=k--;
+			 odd[i]=2*k-1;
+			 k--;
 			 if(i+k>r){
 			 	l=i-k; 
 			 	r=i+k;
@@ -33,7 +34,6 @@ int main(){
 		for(int i:odd)cout<<i<<" ";
 		cout<<endl;
 		//for even length palindrome
-
 		l=0,r=-1;
 		vector<int>even(n);
 	 	for(int i=0;i<n;i++){
@@ -41,15 +41,17 @@ int main(){
 			 while(i-k-1>=0 and i+k<n and A[i-k-1]==A[i+k]){
 			 	k++;
 			 }
-			 even[i]=k--;
+			 
+			 even[i]=2*k;
+			 k--;
 			 if(i+k>r){
 			 	l=i-k-1; 
 			 	r=i+k;
 			 }
+			 
 		}
 		cout<<"even length pali: ";
-		for(int i:even)cout<<even[i]<<" ";
-			
+		for(int i:even)cout<<i<<" ";
 	}
 return 0;
 }
