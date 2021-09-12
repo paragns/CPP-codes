@@ -16,7 +16,10 @@ void dfs(int node, int par){
 		  else{
 		  	//forword edge
 			  	dfs(child,node);
-			  	if(low[child]>in[node]){ // if(low[child]>=in[node])--for articulation pt;
+			  	if(low[child]>in[node]){ 
+				  // if(low[child]>=in[node])--for articulation pt; 
+				  //but root can only be A.P if it has >=2 children so check for it 
+				  //i.e if node==root put else condn and check for A.P seperately
 			  	cout<<"bridge between"<<node<<"->"<<child<<endl;
 			  	} 
 			  	low[node]=min(low[node],low[child]);
