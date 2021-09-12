@@ -24,7 +24,6 @@ void dfs(int node, int par){
   		
 	  }
   }
-  
 // Driver code
 int main()
 {
