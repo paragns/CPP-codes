@@ -56,7 +56,6 @@ int main(){
 						if(!viz[cx][cy]){
 							q.push({cx,cy});
 							viz[cx][cy]=1;
-							
 						}
 					}
 				}
