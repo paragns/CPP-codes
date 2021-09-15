@@ -20,6 +20,7 @@ int main(){
 			}
 			mp.push_back(temp);
 		}
+		
 		int ans=1;
 		vector<int>p(1001,0);
 		p[2]=1;
