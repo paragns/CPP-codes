@@ -4,7 +4,6 @@ using namespace std;
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-
 //works with 0 indexed nodes only
 int main(){
 	ios_base::sync_with_stdio(false);
