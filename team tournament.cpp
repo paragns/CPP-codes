@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 #include<bits/stdc++.h>
 using namespace std;
 #define ll long long int
@@ -39,7 +32,6 @@ int DSU_BipartiteOnline(auto &V, int n){
     }
     return count;
 }
- 
 int main(){
     fast_io;
     int n,m;
