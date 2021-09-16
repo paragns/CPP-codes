@@ -39,8 +39,7 @@ int main(){
 		}
 		 ans[i]=(dp[i][1]+dp[i][0])%mod;
 	 }
-	 cout<<ans[n];
-	
+	 cout<<ans[n];	
 }
     return 0;
 }
