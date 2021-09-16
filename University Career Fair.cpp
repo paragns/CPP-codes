@@ -13,7 +13,7 @@ int main(){
     cin.tie(NULL);
     int n;
 	cin>>n;
-	vector<vector<int>>A(n,vector<int>(3));
+	vector<vector<int>>A(n,vector<int>(2));
 	for(int i=0;i<n;i++)cin>>A[i][1];
 
 	cin>>n;	
@@ -21,17 +21,13 @@ int main(){
 		cin>> A[i][0];
 		A[i][0]+=A[i][1];
 	}
-	cin>>n;	
-	for(int i=0;i<n;i++){
-		cin>> A[i][2];
-	}
 	sort(A.begin(), A.end());
     vector<int>dp(n,0);
-    dp[0]=A[0][2];
+    dp[0]=1;
     for (int i = 1; i < n; i++){
         int t=bins(-1,i-1,A,i);
-    	if(t!=-1)dp[i]=max(dp[i-1],dp[t]+A[i][2]);
-    	else dp[i]=max(A[i][2],dp[i-1]); 
+    	if(t!=-1)dp[i]=max(dp[i-1],dp[t]+1);
+    	else dp[i]=max(1,dp[i-1]); 
     }        
 	cout<< dp[n - 1];
 return 0;

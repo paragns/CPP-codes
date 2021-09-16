@@ -4,7 +4,6 @@ using namespace std;
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-
 string make(string A){
 	multiset<string, greater<string>> s;
 	int level=0;
@@ -18,8 +17,7 @@ string make(string A){
 	for(auto i:s)ans+=i;
 	return ans;	
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	int t=1;
@@ -28,10 +26,6 @@ int main()
 	 	string A;
 	 	cin>>A;
 	 	cout<<make(A);
-	 	
-	 	
 	 }
-	
-	
-return 0;
+	return 0;
 }
