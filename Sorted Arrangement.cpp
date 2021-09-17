@@ -3,18 +3,14 @@ using namespace std;
 #define ll long long 
 ll int BIT[100005], n;
  void compress(vector<ll int> &arr){
- 	
  	map<ll int ,int>mp;
- 	
  	for(auto i:arr){
  		mp[i]=0;
-	 }
-	 
+	} 
 	int t=1;
 	for(auto i:mp){
 	 	mp[i.first]=t++;
-	 }
-	
+	}
 	for(int i=0;i<arr.size();i++)
 		 arr[i]=mp[arr[i]];	 
  }
@@ -23,22 +19,19 @@ void update(ll int x,ll int delta){
 		BIT[x] += delta;
 	}
 }
- 
 ll int query( ll int x){
 	ll int sum = 0;
 	for(x; x > 0; x -= x&-x)
 	sum += BIT[x];
 	return sum;
 } 
- 
 ll int minops(vector<ll int> &arr) {
     ll int ans=0;
     ll int i;
     n = 0;
     for(i=0;i<arr.size();i++){
         n = max(n, arr[i]);
-    }
-    
+    }  
     for(i=0; i<arr.size(); i++){
     	ll int left = query(arr[i]-1);
 	    ll int right = i - query(arr[i]);
@@ -47,7 +40,6 @@ ll int minops(vector<ll int> &arr) {
     }
     return ans;
 }
- 
 int main(){
 	int i, k;
 	cin>>k;
