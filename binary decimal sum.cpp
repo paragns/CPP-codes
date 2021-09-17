@@ -2,8 +2,7 @@
 using namespace std;
 # define ll long long
 #define mod 1000000007         
-int main()
-{
+int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     int t;
@@ -11,7 +10,7 @@ int main()
     while(t--){
         long long n;
         cin>>n;
-         n++;
+        n++;
         long long sum = 0;
         ll block = 1, p = 1;  
         for(int i=0;i<=60;i++){
@@ -31,5 +30,11 @@ int main()
     }	
     return 0;
 }
+/*
+basically  quotient/2 boxes will have 1 in them and bo of remainder 
+cantains 1 if quotient is odd;
 
+so total no.of ones= (quotient/2)* size of box(i.e 2^i)  + 
+if(quotient%2)reamainder
+*/
 

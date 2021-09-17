@@ -13,15 +13,15 @@ int main()
 	vector<vector<ll int>>upload(n);
 	
 	for(int i=0;i<n;i++){
-	ll int x,y;
-	cin>>x>>y;
-	upload[i]={x,y};
+		ll int x,y;
+		cin>>x>>y;
+		upload[i]={x,y};
 	}
 	vector<ll int>gaps;
 	ll int prev=0;
 	for(int i=0;i<n;i++){
-	gaps.push_back(upload[i][0]-prev-1);
-	prev=upload[i][1];
+		gaps.push_back(upload[i][0]-prev-1);
+		prev=upload[i][1];
 	}
 	gaps.push_back(tot-prev);
     ll int ans=0;
