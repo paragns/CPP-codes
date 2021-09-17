@@ -53,9 +53,6 @@ int main()
 				if(path.size()>1)mat.push_back(path);
 			}
 		}
-		
-		
-	
 	sort(mat.begin(),mat.end(),comp);
 	int i=0,ans=0;
 	int sz=mat[0].size();
@@ -64,8 +61,6 @@ int main()
 		ans=max(ans,mat[i][0]*mat[i][1]);
 		i++;
 	}
-		
-	
 cout<<ans;
 return 0;
 }
