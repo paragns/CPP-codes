@@ -1,8 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-#define vvi vector<vector<int>>
-  
 // Driver code
 int main()
 {
@@ -10,15 +7,13 @@ int main()
     cin.tie(NULL);
 	int n;
     cin>>n;
-    vvi v(100005),u(100005);
-    
+    vector<vector<int>> v(100005),u(100005);
     for(int i=0;i<n;i++){
         int x,y;
         cin>>x>>y;
         v[x].push_back(y);
     }
     for(int i=0;i<100005;i++)sort(v[i].begin(),v[i].end());
-   
     for(int i=0;i<100005;i++){
         for(int j=0;j<v[i].size();j++){
             for(int k=j+1;k<v[i].size();k++){
@@ -30,8 +25,7 @@ int main()
         }
     }
  
-    for(int i=0;i<100005;i++)
-		sort(u[i].begin(),u[i].end());
+for(int i=0;i<100005;i++)sort(u[i].begin(),u[i].end());
     int ans=0;
     for(int i=0;i<100005;i++){
         int t=1;
