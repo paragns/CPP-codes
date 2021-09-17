@@ -14,18 +14,15 @@ int main()
 	for(int i=0;i<n;i++){
 		cin>>lights[i];
 	}
-	
 	int m;
 	cin>>m;
 	vector<int>nums(m);
 	for(int i=0;i<m;i++){
 		cin>>nums[i];
-	}
-	
+	}	
 	int p=*max_element(nums.begin(),nums.end());
 	vector<bool>sieve(p+1,false);
 	vector<int>spf(p+1,0);
-
 	for(int i=2;i<sieve.size();i++){
 		if(sieve[i])continue;
 		else {
@@ -69,7 +66,6 @@ int main()
 			}
 		}
 	
-		
 			int i=0;
 		for( i=0;i<lights.size()-1;i++){
 			cout<<lights[i]<<endl;

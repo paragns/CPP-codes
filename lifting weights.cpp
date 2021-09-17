@@ -16,30 +16,21 @@ vector<ll int> powerset(vector<ll int>& A){
 	return pset;
 }
 // Driver code
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-	
     cin>>n;
     vector<ll int>A(n);
  	for(ll int i=0;i<n;i++)
-	 cin>>A[i];
-	 ll int maxe;
-	cin>>maxe;
-	
+	cin>>A[i];
+	ll int maxe;
+	cin>>maxe;	
 	vector<ll int>left, right;
 	left.assign(A.begin(), A.begin()+n/2);
 	right.assign(A.begin()+n/2,A.end());
-	
-	
-	
 	vector<ll int>Lpset=powerset(left);
 	vector<ll int>Rpset=powerset(right);
-
-	
-	sort(Rpset.begin(),Rpset.end());
-	
+	sort(Rpset.begin(),Rpset.end());	
 	ll int ans=0;
 	for(ll int i:Lpset){
 		auto itr=upper_bound(Rpset.begin(),Rpset.end(),maxe-i);
@@ -49,9 +40,7 @@ int main()
 		//	cout<<i<<" "<<*itr<<endl;
 		}
 	}
-	cout<<ans;
-	
-	
+	cout<<ans;	
 return 0;
 }
 /*
