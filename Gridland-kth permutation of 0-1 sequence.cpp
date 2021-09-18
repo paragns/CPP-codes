@@ -21,7 +21,6 @@
     }    
     int main(){
     	fast_io;
-     
     	int n;
     	cin>>n;
         fact[0]=1;
