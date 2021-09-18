@@ -9,16 +9,16 @@ pair<int,int>dfs(int v,vector<vector<int>> &adj,vector<int> &val){
    		y=1;
    }
    else {x=0, y=2;}
-for(auto u:adj[v]){
+	for(auto u:adj[v]){
     	if(vis[u])continue;
    		auto p=dfs(u,adj,val);
 		   x+=min(p.first, p.second);
-		   y+=min(p.first+1, p.second-1);	
-   }    
+		   y+=min(p.first+1,p.second-1);	
+    }    
    return {x,y};
 }
 int main(){
- ios_base::sync_with_stdio(false);
+ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
     int n; cin>> n;
@@ -30,10 +30,8 @@ int main(){
         adj[v].push_back(u);
     }
     vector<int> val(n+1);
-    vis.resize(n+1);
-    
-    for(int i=1;i<=n;i++)cin>>val[i];
-	
+    vis.resize(n+1);    
+    for(int i=1;i<=n;i++)cin>>val[i];	
 	for(int i=1;i<=n;i++){
         int a;cin>>a;
         val[i]=val[i]^a;    //now val stores if value at node i is corrupted or not
