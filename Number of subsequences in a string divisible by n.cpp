@@ -19,7 +19,6 @@ ll int func(int in, string &A, int rem, int m,int flag){
 int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
@@ -27,7 +26,7 @@ int main(){
 	 	string A;
 	 	cin>>A;
 	 	n=A.size();
-	 	 cin>>m;
+	 	cin>>m;
 	 	dp.resize(n+1,vector<vector<ll int>>(m+1,vector<ll int>(2,-1)));
 	 		cout<<func(0,A,0,m,0)%mod;
 	}
