@@ -3,7 +3,6 @@ using namespace std;
 #define N 100000
 int r1,r2,n;
 int rec(int index,vector<int>&right, vector<int>& pre, string & A){
- 	
     if(index == n) return 0;
 
     if(right[index] != -1) return right[index];
@@ -18,8 +17,7 @@ int rec(int index,vector<int>&right, vector<int>& pre, string & A){
     return right[index] = mine;
 
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     vector<int>sieve(N+1,0);
