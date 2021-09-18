@@ -3,7 +3,6 @@ using namespace std;
 #define ll long long
 ll int dp[500001][2][2][2][2][2];
 	string A;
-
 ll int func(int indx, bool a, bool e, bool i ,bool o, bool u, bool ok){
 	if(dp[indx][a][e][i][o][u]!=-1  )return dp[indx][a][e][i][o][u];
 	if(indx>=A.size()){
@@ -18,15 +17,12 @@ ll int func(int indx, bool a, bool e, bool i ,bool o, bool u, bool ok){
 	if(A[indx]=='u' and u )t=1+func(indx+1,0,0,0,0,1,1);
 	t==0? t=-1:t;
 	t=max(t,func(indx+1,a,e,i,o,u,ok));
-	
  dp[indx][a][e][i][o][u]=t;
-	cout<<indx<<"-"<<a<<"-"<<e<<"-"<<i<<"-"<<o<<"-"<<u<<"-"<<t<<"*"<<endl;
+	//cout<<indx<<"-"<<a<<"-"<<e<<"-"<<i<<"-"<<o<<"-"<<u<<"-"<<t<<"*"<<endl;
 	return t;
-}
-  
+} 
 // Driver code
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	memset(dp,-1,sizeof(dp));
