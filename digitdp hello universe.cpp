@@ -21,9 +21,7 @@
         else ans+=digitdp(x,pos+1,curr+(d==dig),check or !(ub==dig),start);
             
         for(dig=1;dig<=ub;dig++){
-        	
             ans+=digitdp(x,pos+1,curr+(d==dig),check or !(ub==dig),1);
-            
         }
         //check=0->ub=8
         //check=1->ub=9
