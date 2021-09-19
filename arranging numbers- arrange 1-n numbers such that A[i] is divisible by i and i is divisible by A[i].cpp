@@ -15,6 +15,7 @@ int recur(int pos, int mask,vector<int> &dp){
 	}
 	return dp[mask]=ans;
 }
+
 int main()
 {
 	ios_base::sync_with_stdio(false);
