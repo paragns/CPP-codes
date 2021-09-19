@@ -30,9 +30,9 @@ int main()
 	 	cin>>A>>B;
 	 	int i=0,j=0,flag=0;
 	 	int m=B.size();
+	 	
 	 	while(i<A.size()){
 			 if(A[i]!=B[j%m]){flag=1; break;}
-			 
 			 i++;
 			 j++;
 		 }
@@ -55,12 +55,17 @@ int main()
 	 }
 return 0;
 }
+/*
 aaaa
 0123
+
 bcdbcd
 000123
+
 abcda
 00001
+
 ababab
 001234
 
+*/

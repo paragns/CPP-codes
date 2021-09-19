@@ -15,7 +15,6 @@ int recur(int pos, int mask,vector<int> &dp){
 	}
 	return dp[mask]=ans;
 }
-
 int main()
 {
 	ios_base::sync_with_stdio(false);
@@ -28,11 +27,7 @@ int main()
 			 vector<int>dp(pow(2,n+1),-1);
 			 ans+=recur(1,0, dp);
 			 cout<<ans<<" ";
-		 
-		 
-	 }
-	
-	
+	 }	
 return 0;
 }
 // 1 2 3 4 5
