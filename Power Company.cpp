@@ -17,7 +17,6 @@ int main()
 			}
 			ll int half=ceil(1.0*n/2);
 			
-			
 			vector<ll int >nums;
 			for(auto i=mp.begin();i!=mp.end();++i){
 				nums.push_back(i->second);
