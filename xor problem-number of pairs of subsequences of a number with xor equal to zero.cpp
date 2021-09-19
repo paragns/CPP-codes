@@ -26,10 +26,12 @@ int main(){
 		reverse(A.begin(),A.end());
 		reverse(B.begin(),B.end());
 		//00101
+		
 		set<ll int>s;
 		for(ll int i=1;i<(1<<A.size());i++){
 			ll int t=i,j=A.size()-1;
 			vector<ll int>temp;
+			
 			while(t){
 				if(t&1)temp.push_back(A[j]);
 				j--;
