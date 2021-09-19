@@ -22,6 +22,7 @@ int main()
 		 for(int i=2;i<=n;i++){
 		 	low=max(low,A[i]-A[i-1]);
 		 }
+		 
 		 while(low<high){
 		 	ll int mid=low+(high-low)/2;
 		 	int cnt=0;
@@ -29,7 +30,7 @@ int main()
 			 for(int i=2;i<=n;i++){
 			 	if(i==n){
 				 	if(A[i]-p>mid){p=A[i-1]; i--;cnt--;}
-				 	else if(A[i]-p==mid)p=A[i];//
+				 	//else if(A[i]-p==mid)p=A[i];//
 				}
 			    else if(A[i]-p<mid)cnt++;
 				else if(A[i]-p>mid){

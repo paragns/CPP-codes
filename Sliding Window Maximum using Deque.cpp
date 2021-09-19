@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-  
 // Driver code
 int main()
 {
@@ -19,8 +17,7 @@ int main()
 	q.push_back(0);
 	
 	for(int i=1;i<k;i++){
-		while(!q.empty() and a[q.back()]<a[i] )	
-		    q.pop_back();
+		while(!q.empty() and a[q.back()]<a[i] )	q.pop_back();
 			q.push_back(i); 
 			   
 	}
@@ -29,8 +26,8 @@ int main()
 	for(int i=k;i<n;i++){
 		if(i-k==q.front())q.pop_front();
 		
-		while(!q.empty() and a[q.back()]<a[i] )	
-		q.pop_back();
+		while(!q.empty() and a[q.back()]<a[i] )	q.pop_back();
+		
 		q.push_back(i);
 		cout<<a[q.front()]<<" ";
 	}
