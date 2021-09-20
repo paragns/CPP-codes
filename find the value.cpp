@@ -11,7 +11,6 @@ void update(ll int x ,ll int del){
 		fen[x]+=del;
 	}
 }
-
 ll int query(ll int x){
 	ll int sum=0;
 	if(x==0)return 0;
@@ -31,7 +30,6 @@ int main()
 	 	cin>>n;
 	 	vector<int>A(n),B(n);
 	 	for(int i=0;i<n;i++) cin>>A[i];
-	 	
 	 	for(int i=n-1;i>=0;i--){
 			 update(A[i],1);
 			 B[i]=query(A[i]-1);
@@ -43,7 +41,5 @@ int main()
 		}
 	 	cout<<ans;
 	 }
-	
-	
 return 0;
 }

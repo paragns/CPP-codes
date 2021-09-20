@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 # define ll long long
@@ -31,13 +32,11 @@ int main()
 				else if(A[i][1]==0)enter.push(i);
 				i++;
 			}
-			
 			    if(exit.empty() and !enter.empty()){ans[enter.front()]=time; enter.pop(); prev=0;}
 				else if(!exit.empty() and enter.empty()){ans[exit.front()]=time; exit.pop(); prev=1;}
 				else if(exit.empty() and enter.empty()){time=A[i][0];prev=-1;continue;}
 				else if(prev==-1 or prev==1){
-					ans[exit.front()]=time; exit.pop(); prev=1;
-					
+					ans[exit.front()]=time; exit.pop(); prev=1;	
 				}
 				else if(prev==0){ans[enter.front()]=time; enter.pop(); prev=0;}
 				
@@ -46,7 +45,5 @@ int main()
 		}
 		for(auto i:ans)cout<<i<<'\n';
 	 }
-	
-	
 return 0;
 }

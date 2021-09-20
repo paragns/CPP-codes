@@ -30,27 +30,28 @@ int main()
 	vector<int>A(n),mine(N,inf),prev(n);
 	for(auto &i:A)cin>>i;
 	int temp=0; 	
-	 	for(int i=0;i<n;i++){
-			prev[i]=temp;
-			int k=A[i];
-			while(k!=1){
-				int l=spf[k];
-				mine[l]=min(mine[l],temp);
-				prev[i]=min(prev[i],mine[l]);
-				while(k%l==0){
-					k/=l;
-				}
+ 	for(int i=0;i<n;i++){
+		prev[i]=temp;
+		int k=A[i];
+		while(k!=1){
+			int l=spf[k];
+			mine[l]=min(mine[l],temp);
+			prev[i]=min(prev[i],mine[l]);
+			while(k%l==0){
+				k/=l;
 			}
-			temp=prev[i]+1;
 		}
-		//for(int i:prev)cout<<i<<" ";
-		cout<<prev[n-1]+1;
+		temp=prev[i]+1;
+	}
+	//for(int i:prev)cout<<i<<" ";
+	cout<<prev[n-1]+1;
 	}
 return 0;
 }
+// 3 2 18 6 4 
 /* explaination:
  consider 3 2 6;
- we find all the factos of a no. and find the min prev value this factor can take us
+ we find all the factors of a no. and find the min prev value this factor can take us
     initially 3 has mine[3]=inf  so we update it to 0 as prev value for A[0]=0;
     similarly for 2 mine[2]=1;
     now for factors of 6 we get 2and 3 so in prev array we fill the min value that

@@ -10,7 +10,7 @@
          if (y % 2 == 0)
             return ((st)%mod * (st)%mod)%mod;
         else
-            return (x%mod *(st)%mod * (st)%mod)%mod;
+            return (((x%mod) *st)%mod * (st)%mod)%mod;
     }
     int main(){
 	ios_base::sync_with_stdio(false);

@@ -3,7 +3,6 @@ using namespace std;
 # define ll long long
 #define mod 1000000007
 vector<ll int>fenwick;
-
 void compress(vector<ll int> &A){
 	map<ll int,ll int>mp;
 	for(int i=1;i<A.size();i++){
@@ -69,3 +68,8 @@ int main()
 	}
 return 0;
 }
+/*
+
+*/
+
+

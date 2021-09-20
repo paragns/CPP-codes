@@ -21,7 +21,7 @@ int main(){
 			// cout<<n<<" "<<ans;
 	    }
 		if(ans.size()==0)cout<<"-1"<<'\n';
-		 else cout<<ans<<'\n';
+		else cout<<ans<<'\n';
 	 }
 return 0;
 }
