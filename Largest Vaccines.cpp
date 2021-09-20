@@ -17,12 +17,11 @@ int main(){
 		int lim=n/mine;
 		string ans="";
 		for(int i=8;i>=0;i--){
-			if(n-A[i]>0 and (n-A[i])/mine+1==lim){n-=A[i];ans+='0'+(i+1);i++;lim--;}
+			if(n-A[i]>0 and (n-A[i])/mine==lim-1){n-=A[i];ans+=('0'+(i+1));i++;lim--;}
 			// cout<<n<<" "<<ans;
 	    }
-		
 		if(ans.size()==0)cout<<"-1"<<'\n';
 		 else cout<<ans<<'\n';
-	 }S
+	 }
 return 0;
 }

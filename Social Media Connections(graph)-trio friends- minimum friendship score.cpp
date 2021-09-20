@@ -14,7 +14,7 @@ int main()
     cin.tie(NULL);
 	int t=1;
 	//cin>>t;
-	 while(t--){
+	while(t--){
 	 	int n, ed; cin>>n>>ed;
 	 	adj.resize(n+1);
 	 	for(int i=0;i<ed;i++){
@@ -36,10 +36,9 @@ int main()
 					 }
 				 }
 			 }
-		 }
-			 
+		 } 
 			 if(ans==inf)cout<<-1;
 			 else cout<<ans;	
-	 }	
+	}	
 return 0;
 }

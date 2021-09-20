@@ -16,15 +16,14 @@
             dp[0][j][0]=1;
             ans[0][j][0]=ans[0][j-1][0]+dp[0][j][0];
         }
-        
         for(int i =1;i<50;i++){
             for(int j =1;j<=100;j++){
                 for(int k =0;k<=i;k++){
                     dp[i][j][k] =(dp[i-1][j][k]*j)%mod;
                     if(k>=1){
-                        dp[i][j][k]=(dp[i][j][k] +ans[i-1][j-1][k-1])%mod;        
+                        dp[i][j][k]=(dp[i][j][k]+ans[i-1][j-1][k-1])%mod;        
                     }
-                    ans[i][j][k]=( ans[i][j-1][k]+ dp[i][j][k])%mod;
+                    ans[i][j][k]=(ans[i][j-1][k]+dp[i][j][k])%mod;
                 }
             }
         }
