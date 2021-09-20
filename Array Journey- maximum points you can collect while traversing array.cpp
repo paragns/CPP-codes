@@ -22,10 +22,10 @@ int main()
 	//
 	deque<ll int>q;
 	q.push_back(0);
-	dp[0]=a[0];
+	dp[0]=A[0];
 	for(int i=1;i<n;i++){
 		while(!q.empty() and i-q.front()>k)q.pop_front();
-		dp[i]=a[i]+dp[q.front()];
+		dp[i]=A[i]+dp[q.front()];
 		while(!q.empty() and dp[i]>=dp[q.back()])q.pop_back();
 		q.push_back(i);
 		// cout<<dp[i]<<" ";	

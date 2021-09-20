@@ -4,10 +4,7 @@ using namespace std;
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-
-
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	int t=1;
@@ -26,8 +23,6 @@ int main()
 		
 		if(ans.size()==0)cout<<"-1"<<'\n';
 		 else cout<<ans<<'\n';
-	 }
-	
-	
+	 }S
 return 0;
 }
