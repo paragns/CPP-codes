@@ -4,8 +4,7 @@ using namespace std;
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	int T=1;
@@ -49,7 +48,5 @@ int main()
 			cout<<pref[b]-pref[a-1]<<'\n';
 		}
 	}
-	
-	
 return 0;
 }

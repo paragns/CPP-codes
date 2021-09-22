@@ -15,8 +15,10 @@
     for(int i=1;i<n;i++){
     		if(v[i]<p1.top()){
     			cost1 += p1.top()-v[i];
-    			p1.pop();
+    			cout<<p1.top()<<" ";
+				p1.pop();
     			p1.push(v[i]);
+    			cout<<v[i]<<" "<<cost1<<endl;
     		}
     		p1.push(v[i]);
     	}
@@ -30,6 +32,6 @@
     		}
     		p2.push(v[i]);
     	}
-     	cout<<min(cost1,cost2)<<endl;
+     	cout<<cost1<<" "<<cost2<<endl;
     	return 0;
     }

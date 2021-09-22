@@ -51,10 +51,10 @@ int main(){
 	   //for(ll int i:lcp)cout<<i<<" ";
 	    ll int rep=0;
 	    for(ll int i=0; i < N; i ++){
-	      // cout<<lcp[i]<<" ";
-	       rep+=lcp[i]-1;
+	       cout<<lcp[i]<<" ";
+	       rep+=lcp[i];
 	    }
-	    cout<<N*(N-1)/2 -rep;
+	    cout<<N*(N+1)/2 -rep;
 	}
 return 0;
 }

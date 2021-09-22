@@ -19,7 +19,7 @@ int main(){
 	 	ll int k; cin>>k;
 	 	sort(A.begin(), A.end(), greater<ll int>());
 	 	A.push_back(0);
-		 int num=1;
+		int num=1;
 	 	ll int sum=0;
 	 	// 5 3 2
 	 	// 5  2

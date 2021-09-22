@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-# define ll long long
+#define ll long long
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
@@ -23,15 +23,13 @@ ll int func(int x, int y, auto &A, auto &ans){
 	else if(r==-1)return ans[x][y]=l%mod;
 	else return ans[x][y]=(l+r)%mod;
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	int T=1;
 	//cin>>T;
 	while(T--){ 	
 	 	cin>>r>>c;
-	 	
 	 	vector<vector<int>>A(r,vector<int>(c,0));
 	 	
 	 	for(int i=0;i<r;i++){

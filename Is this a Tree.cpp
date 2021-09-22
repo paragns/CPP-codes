@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int get_val(char x){
     return x - 'A';
 }
