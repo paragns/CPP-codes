@@ -37,8 +37,6 @@ int main()
 			}
 		}
 	}
-	
-
 	unordered_map<int,int>mp,mp2;
 	
 	for(int i=0;i<nums.size();i++){

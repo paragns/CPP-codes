@@ -35,7 +35,7 @@ int main()
 	int ans=0;
 	while(1){
 		string p;
-		getline(cin,p);
+		cin>>p;
 		if(p=="0")break;
 		cout<< no_swaps(p)<<endl;
 	}

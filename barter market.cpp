@@ -15,7 +15,7 @@ int main()
 	 	cin>>com>>coins>>need>>off;
 	 	int ans=0;
 	 	while(1){
-			if(coins-need>=0 and com-1>=0){
+			if(coins-need>=0 and com >0){
 				coins-=need; com--;
 				ans++;	
 			} 	

@@ -31,7 +31,6 @@ ll int query(ll int x){
 		sum+=fenwick[x];
 	}
 	return sum;
-	
 }
 int main()
 {

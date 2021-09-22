@@ -37,12 +37,12 @@ return 0;
 //   if(y2>x2) then prev state has to be   (y'+x2,x2)
 //   similarly for (x2>y2);
 //  now  if we have (11,2):
-// prev states can be:  (9,2)->(7,2)->(5,2)->(3,2)->(1,2)
+// prev states can be:(11,2)->(9,2)->(7,2)->(5,2)->(3,2)->(1,2)
 // thus (1,2) can be obtained directly (11%2,2), i.e (x2%y2,y2);
 // thus while(x2>y2) we do(x2=x2%y2);
-// but what if (x1,y1) required ans is in intermediate stae 
+// but what if (x1,y1) required ans is in intermediate state 
 // i.e for above example if (7,2) is req ans we wont get this state as (11,2)is directly converted to(1,2);
-// thus before doing(x2=x2%y2) we check if(x2-x1%y2==0)if it is we make x2 as x1;
+// thus before doing(x2=x2%y2) we check if((x2-x1)%y2==0)if it is we make x2 as x1;
 // i.e for (11,2) (11-7)%2==0 there for 7 can be obtained by substracting 2 from 11 twice;
 // therefore (7,2) is attainable; 
  
