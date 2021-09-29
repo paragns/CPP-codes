@@ -14,17 +14,25 @@ int main()
 	
 	set<int>s;
 	for(int i=0;i<n;i++){
-		if(s.find(A[i])!=s.end()) continue;//  if number ARE NOT DISTICT
+		if(s.find(A[i])!=s.end()){//  if number ARE NOT DISTICT
+			continue;
+		} 
 		s.insert(A[i]);
 		auto x=s.upper_bound(A[i]);
 		if(x!=s.end())s.erase(x);
+		//cout<<s.size()<<" ";
 	}
 	cout<<s.size();
 	  
 return 0;
 }
+// 10 9 2 5 3 7 101 18
+// 2 4 5  
+
+
 // 2 5 4 6 3 4 5 6 7
-// 1 2 2 3 2 3 4 5 6
+// 2 3 4 5 6 7
+// 1 2 2 3 3 3 4 5 6
 // 
 /*
  Find the Longest increasing subsequence at Each Position
