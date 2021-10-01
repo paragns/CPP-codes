@@ -4,7 +4,7 @@ using namespace std;
  int dp[100001][5];
  int n, k, x;
  
-   int func(int indx,int par){
+int func(int indx,int par){
   	if(indx>=n)return 1;
 	  if(dp[indx][par]!=-1)return dp[indx][par];
   	int ans=0;
