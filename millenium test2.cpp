@@ -7,7 +7,6 @@ using namespace std;
 int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
@@ -29,7 +28,7 @@ int main(){
 			for(int j=0;j<26;j++){
 				cnt+=(prefix[y][j]-prefix[x-1][j]);
 				char ans=('a'+j);
-				if(cnt>=k){cout<<ans<<'\n';break;}
+				if(cnt>=k){cout<<ans<< '\n';break;}
 			}
 		}
 	}

@@ -17,6 +17,7 @@ int main()
 	int T=1;
 	cin>>T;
 	 while(T--){
+	 	//(a/b)mod m
 	 	int a,b,m;
 	 	cin>>a>>b>>m;
 	 	if(__gcd(b,m)!=1)cout<<"not defined"<<'\n';
