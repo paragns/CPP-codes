@@ -21,7 +21,6 @@ ll int query(int node, int s, int e, int l ,int r){
 	int q1=query(2*node,s,mid,l,r);
 	int q2=query(2*node+1,mid+1,e,l,r);
 	return q1+q2;
-
 }
 void update(int node, int s, int e, int indx, int val){
 	if(s==e){
