@@ -19,11 +19,9 @@ void dfs1(int node, vector<int>& A){
 	for(int i:adj2[node]){
 		if(!vis[i])dfs1(i,A);
 	}
-
 }
 
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	int t=1;

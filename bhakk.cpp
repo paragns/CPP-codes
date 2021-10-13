@@ -11,9 +11,10 @@ int main(){
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
-	 	int n=0;
-	 	char a='a';
-	 	for(int i=0;i<26;i++)cout<<n++<<" "<<a++<<endl;
+	 	int n=100000;
+	 		while(n--){
+			 	cout<<1<<" ";
+			 }	
 	}
 return 0;
 }

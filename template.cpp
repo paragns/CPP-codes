@@ -11,36 +11,11 @@ int main(){
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
-	 	int n,s,k; cin>>n>>s>>k;
-	 	vector<int>A(n),vis(n);
-	 	for(int i=0;i<n;i++){
-			cin>>A[i];
+	 	int n=0,m=1;
+	 		cin>>n;
 		}
-		multiset<int,greater<int>>s1,s2;
-		for(int i=0;i<k;i++){
-			s1.insert(A[i]);
-			vis[i]=1;
-			s2.insert(A[n-1-i]);
-		}
-		int l=k,r=n-k-1;
-		int ans=0;
-		while(s--){
-			int x=*(s1.begin());
-			int y=*(s2.begin());
-			if(x>=y){
-				//cout<<x<<endl;
-				ans+=x;
-				s1.erase(s1.begin());
-				if(l<=r){s1.insert(A[l]); l++;}
-			}
-			else{
-			//	cout<<y<<endl;
-				ans+=y;
-				s2.erase(s2.begin());
-				if(l<=r){s2.insert(A[r]);r--;}
-			}
-		}
-		cout<<ans;
+	 	cout<<fib.size();
+	 	
 	}
 return 0;
 }
