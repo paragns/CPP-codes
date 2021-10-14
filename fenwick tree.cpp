@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long 
-const int N=100000;
+const int N=100001;
 vector<ll int>fenwick;
 //use compress when the largest no is out of range of capacity of array
  void compress(vector<ll int> &arr){
@@ -18,7 +18,7 @@ vector<ll int>fenwick;
 }
  
 void update(ll int x,ll int val){     
-	for(x; x <= n; x += x&-x){
+	for(x; x < N; x += x&-x){
 		fenwick[x] += val;
 	}
 }
