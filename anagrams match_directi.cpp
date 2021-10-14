@@ -1,6 +1,8 @@
 #define ll long long
 #define mod 1000000007 
+
 vector<int> Solution::solve(string A, vector<string> &B) {
+    
 vector<ll int>hashes={130651,169627,95789,197101,104803,176509,113909,172597,6221,86269,188999,166867,4271,177787,172709,79151,155153,40897,156781,26459,176087,86243,164309,40597,181397,39791};
     ll int m = B.size(),n=A.size();
     vector<ll int> sum(m,0);
