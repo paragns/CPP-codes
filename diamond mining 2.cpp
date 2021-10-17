@@ -17,6 +17,7 @@ int main(){
 	for(int i=1;i<=n;i++)
 		for(int j=1;j<=n;j++)
 			cin>>A[i][j];
+			
 vector<vector<vector<int>>>dp(2,vector<vector<int>>(n+1,vector<int>(n+1,minf)));
 vector<vector<int>>temp(n+1,vector<int>(n+1,minf));
 

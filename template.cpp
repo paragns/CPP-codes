@@ -11,11 +11,17 @@ int main(){
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
-	 	int n=0,m=1;
-	 		cin>>n;
+	 	int n;
+	 	cin>>n;
+	 	map<string, int>mp;
+	 	while(n--){
+	 		string A; int t;
+			cin>>A; cin>>t;
+			mp[A]+=t;
 		}
-	 	cout<<fib.size();
-	 	
+		for(auto i:mp){
+			cout<<i.first<<" "<<i.second<<'\n';
+		}
 	}
 return 0;
 }
