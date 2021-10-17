@@ -26,7 +26,6 @@ int main()
 	while(T--){ 	
 	sieve();
 	int n; cin>>n;
-	
 	vector<int>A(n),mine(N,inf),prev(n);
 	for(auto &i:A)cin>>i;
 	int temp=0; 	
@@ -51,14 +50,14 @@ return 0;
 // 3 2 18 6 4 
 /* explaination:
  consider 3 2 6;
- we find all the factors of a no. and find the min prev value this factor can take us
+ we find all the factors of a no. and find the min prev value this factor can take us to
     initially 3 has mine[3]=inf  so we update it to 0 as prev value for A[0]=0;
     similarly for 2 mine[2]=1;
-    now for factors of 6 we get 2and 3 so in prev array we fill the min value that
+    now as factors of 6 we get 2 and 3 so in prev array we fill the min value that
 	these factors can take us to;
-	firstly prev value of 6 is what 2(prev index) had +1 then it is udated to mine[2]
+	firstly prev value of 6 is what 2( 2's prev index) had +1 then it is udated to mine[2]
 	since 2 is factor so prev value of 6 becomes prev value of 2 that is they can be paired.
-	i.r prev value of 6 is now 1; but then 3 is also factor so prev value of 6 becomes 
+	i.e prev value of 6 is now 1; but then 3 is also factor so prev value of 6 becomes 
 	prev value of 3 i.e 0 so 3-6 can be paired 
 	the variable temp is to track the value of previous index in prev array;
     

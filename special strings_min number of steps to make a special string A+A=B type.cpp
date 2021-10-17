@@ -27,7 +27,7 @@ int main(){
 	 	cin>>A;
 	 	int n=A.size();
 	 	int ans=inf;
-	 	for(int i=n/2-1;i<=n/2+1;i++){
+	 	for(int i=n/2-1;i<=n/2+1;i++){ // constraints are good try i=0;i<n;
 			ans=min(ans,func(A,0,i,i));
 		}
 		cout<<ans;
