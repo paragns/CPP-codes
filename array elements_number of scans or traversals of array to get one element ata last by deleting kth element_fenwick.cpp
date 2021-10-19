@@ -38,17 +38,18 @@ int main(){
 	 	cin>>n;
 	 	for(int i=1;i<=n;i++){
 		 	int t; cin>>t;
-			 update(i,1);
+			update(i,1);
 		}
 	 	int x; cin>>x;
 		int tot=query(n);
 		int prev=0,ans=0;
+		
 		while(tot!=1){
 			int ele=x;
 			int num=query(prev);	
 			if(tot-num>=ele){
 				int ind=bins(prev, n,ele);
-			//	cout<<ind<<endl;
+				cout<<ind<<endl;
 				update(ind,-1);
 				prev=ind;
 				tot=query(n);

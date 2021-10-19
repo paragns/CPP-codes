@@ -7,7 +7,6 @@ vector<int> LPS(string &pat){
     vector<int>lps(n,0);
     for(int i=1;i<n;i++){
 		int j=lps[i-1];
-		
 		while(j>0 and pat[j]!=pat[i]){
 				j=lps[j-1];
 			}

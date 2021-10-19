@@ -14,8 +14,7 @@ bool check(string &A, string &B){
 	if(B.size())return 0;
 	else return 1;
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	int t=1;
@@ -35,7 +34,6 @@ int main()
 		 	for(int i=0;i<=mid;i++){
 			 	p[A[i]-1]='*';
 			 }
-			 
 			 if(check(p,q))low=mid;
 			 else high=mid-1;
 			 //cout<<p<<" "<<q<<" "<<" "<<mid<<" "<<high<<" "<<low<< endl;
