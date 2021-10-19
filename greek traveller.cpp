@@ -9,7 +9,6 @@ int timer=1,ans=0;
 vector<vector<int>>mat;
 void dfs1(int node, int par, vector<int>&vis, auto adj){
 	in[node]=pre[node]=timer++;
-	
 	vis[node]=1;
 	for(auto child:adj[node]){
 		if(child==par)continue;
@@ -20,7 +19,6 @@ void dfs1(int node, int par, vector<int>&vis, auto adj){
 			dfs1(child,node,vis,adj);
 			if(pre[child]>in[node]){
 				// a critical connection;
-			
 				mat[node][child]=0;
 				mat[child][node]=0;
 				ans++;
@@ -30,13 +28,6 @@ void dfs1(int node, int par, vector<int>&vis, auto adj){
 	}
 }
 
-//void dfs2(int node,vector<int> &vis,auto adj){
-//	vis[node]=1;
-//	for(int i:adj[node]){
-//		if(vis[i])continue;
-//		dfs2(i,vis,adj);
-//	}
-//}
 void make_adj(vector<vector<int>>&adj){
 	for(int i=1;i<mat.size();i++){
 		for(int j=1;j<mat[i].size();j++){

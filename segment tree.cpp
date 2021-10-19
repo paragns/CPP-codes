@@ -34,7 +34,7 @@ void update(int node, int s, int e, int indx, int val){
 	else{
 		update(2*node+1,mid+1,e,indx,val);
 	}
-	tree[node]=[2*node]+tree[2*node+1];
+	tree[node]=tree[2*node]+tree[2*node+1];
 }
 int main(){
 	ios_base::sync_with_stdio(false);

@@ -24,7 +24,7 @@ int main(){
     vector<ll int>temp=fenwick;
 	ll int T=1;
 	//cin>>T;
-	 while(T--){
+	while(T--){
 	 	ll int n,q;
 	 	cin>>n>>q;
 	 	vector< int>A(n),B(n);
