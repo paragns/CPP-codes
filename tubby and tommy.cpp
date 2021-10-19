@@ -5,7 +5,7 @@ using namespace std;
 #define inf INT_MAX
 #define minf INT_MIN
 int dfs(int d, int c, auto adj, int turn, int par1, int par2, int timer){
-	cout<<d<<" "<<c<<" "<<turn<<" "<< timer<<endl;
+	//cout<<d<<" "<<c<<" "<<turn<<" "<< timer<<endl;
 	if(turn==0){
 		if(d==c)return timer;
 		int ans=inf;

@@ -27,8 +27,9 @@ int DSU_BipartiteOnline(vector<vector<int>> &edges, int n){
         }
         else{
             par[y]={x,(p1^p2^1)};
-            count++;
+           // count++;
         }
+        count++;
     }
     return count;
 }
