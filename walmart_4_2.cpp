@@ -4,22 +4,20 @@ using namespace std;
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-const int N=1001;
+
 vector<int>A;
-vector<vector<vector<int>>>dp(N,vector<vector<int>>(N,vector<int>(2,-1)));
+unordered_map<string,vector<int>>mp;
 vector<int> func(int i, int j,int k ){
-	//string key=to_string(i)+" "+to_string(j)+to_string(k);
+	string key=to_string(i)+" "+to_string(j)+to_string(k);
 	if(j>=A.size())return {A[i],A[i]};
 	if(k>=A.size())return {max(A[i],A[j]),max(A[i],A[j])};
-	//if(mp.find(key)!=mp.end())return mp[key];
-	auto v=dp[i][j];
-	if(v[0]!=-1 and v[1]!=-1)return dp[i][j];
+	if(mp.find(key)!=mp.end())return mp[key];
 	vector<int> x=func(k, k+1,k+2);
 	vector<int> y=func(j, k+1,k+2);
 	vector<int> z=func(i, k+1,k+2);
 	int l=min({max(A[i], A[j])+x[0],max(A[i], A[k])+y[0], max(A[k], A[j])+z[0]});
 	int r=max({max(A[i], A[j])+x[1],max(A[i], A[k])+y[1], max(A[k], A[j])+z[1]});
-	return dp[i][j]={l,r};
+	return mp[key]={l,r};
 }
 int main(){
 	ios_base::sync_with_stdio(false);
