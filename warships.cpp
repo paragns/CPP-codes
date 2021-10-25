@@ -1,43 +1,46 @@
-#include <bits/stdc++.h>
-using namespace std;
-# define ll long long
-#define mod 1000000007
-#define inf INT_MAX
-#define minf INT_MIN
-int main(){
-	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    
-	ll int T=1;
-	//cin>>T;
-	 while(T--){
-	 	int l,m;cin>>l>>m;
-	 	vector<vector<int>>mp;
-	 	for(int i=0;i<m;i++){
-	 		vector<int>temp;
-		 	for(int j=0;j<((i*i)%m+1);j++){
-				temp.push_back(j); 
-			}
-			mp.push_back(temp);
-		}
-		
-		int ans=1;
-		vector<int>p(1001,0);
-		p[2]=1;
-		l--;
-		while(l--){
-			vector<int>q(1001,0);
-			for(int i=0;i<p.size();i++){
-				if(p[i]==1)
-				for(int j:mp[i]){
-					//cout<<j<<" ";
-					if(q[j]==0){ans++;q[j]=1;}
-				}
-				
-			}
-			p=q;
-		}
-		cout<<ans%m;
-	}
-return 0;
-}
+    #include <bits/stdc++.h>
+    using namespace std;
+     
+    /* ### READ-ONLY PART ### */
+    int warShips(int input1, int input2)
+    /* ### READ-ONLY PART ### */
+    {
+    	int max_layers = input1;
+    	int mod = input2;
+     
+    	/* dp[v][layer] is the size of subtree rooted at 'v' in layer 'layer' */
+    	vector<vector<int>> dp(mod + 2, vector<int>(max_layers + 2));
+     
+    	for(int layer = max_layers; layer > 0; layer--)
+    	{
+    		for(int v = 0; v < mod; v++)
+    		{
+    			int upper = (v*v + 1)%mod;
+    			if(upper == 0)
+    			{
+    				dp[v][layer] = 1;
+    				continue;
+    			}
+     
+    			dp[v][layer] = (1 + dp[upper - 1][layer + 1])%mod;
+    		}
+     
+    		if(layer == 1)
+    			break;
+     
+    		for(int v = 1; v < mod; v++)
+    			dp[v][layer] = (dp[v][layer] + dp[v - 1][layer])%mod;
+    	}
+     
+    	return dp[2][1];
+    }
+     
+    int main()
+    {
+    	int input1, input2;
+    	cin >> input1 >> input2;
+     
+    	cout << warShips(input1, input2);
+    	cout << endl;
+    	return 0;
+    }
