@@ -26,6 +26,9 @@ string numb(string &A){
 		num+=(A[i]-'0');
 	}
 	num++;
+	while(!func(num)){
+		num++;
+	}
 	return to_string(num);
 }
 int main(){
