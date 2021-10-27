@@ -23,7 +23,6 @@ int main(){
 	int k;
 	cin>>k;	 
 	cout<<back(n,k)%mod;
-	 
 return 0;
 }
  
