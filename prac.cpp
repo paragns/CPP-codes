@@ -4,53 +4,66 @@ using namespace std;
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-const int N=200001;
-vector<int>primes,spf(N,0);
-void sieve(){
-	for(int i=2;i<N;i++){
-		if(spf[i]==0){primes.push_back(i); spf[i]=i;}
-		for(int j=0;j<primes.size() and primes[j]*i<N; j++){
-			spf[primes[j]*i]=primes[j];
-		}
-	}
-}
-unordered_map<int, int>mp;
-void func(int A){
-	while(A!=1){
-		mp[spf[A]]^=1;
-		int x=spf[A];
-		while(spf[A]==x){
-			A=A/spf[A];
-		}
-		
-	}
-}
+
+
+unordered_map<int, vector<vector<int>>>A,B;
+
 int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
-	 	sieve();
 		 int n;
+	 	 cin>>n;
+	 	 unordered_map<string , int>city;
+	 	vector<string>que;
+	 	for(int i=0;i<n;i++){
+		 	string t;
+			 cin>>t;
+			 city[t]=i;
+		 }
+	 	
 	 	cin>>n;
-	 	vector<int>st(n);
-	 	for(int i=0;i<n;i++)cin>>st[i];
-	 	int m;
-		cin>>m;
-		 vector<int>A(m);
-		 for(int i=0;i<m;i++){cin>>A[i];
-		 	func(A[i]);
-		 }
-		 for(auto i:mp){
-		 	if(i.second==0)continue;
-			 int x=i.first;
-			// cout<<x<<" ";
-		 	for(int j=x-1; j<n;j+=x){
-				st[j]^=1; 
-			}
-		 }
-		 for(int i:st)cout<<i<<'\n';
+	 	vector<int>X(n),Y(n);
+	 	for(int i=0;i<n;i++){
+			cin>>X[i]; 	
+		}
+	 	cin>>n;
+	 	for(int i=0;i<n;i++)cin>>Y[i];
+	 	
+		for(int i=0;i<n;i++){
+			A[X[i]].push_back({Y[i],i});
+			A[Y[i]].push_back({X[i],i});
+		}
+	 	for(int i:A){
+			sort(A[i.first].begin(),A[i.first].end());
+			if(A[i.first].size()==1)continue;
+			for(int j=0;j<A[i.first].size();j++){
+				if(j==0)A[i.first][j].push_back(A[i.first][j+1][1]);
+				else if(j==A[i.first].size()-1)A[i.first][j].push_back(A[i.first][j-1][1]);
+				else{
+					if(A[i.first][j]-A[i.first][j-1]<= A[i.first][j+1]-A[i.first][j])A[i.first][j].push_back(A[i.first][j-1][0])
+				}
+			} 
+		}
+		for(int i:B){
+			sort(B[i.first].begin(),B[i.first].end()); 
+			if(B[i.first].size()==1)continue;
+			for(int j=0;j<B[i.first].size();j++){
+				if(j==0)B[i.first][j].push_back(B[i.first][j+1][1]);
+				else if(j==B[i.first].size()-1)B[i.first][j].push_back(B[i.first][j+1][1]);
+			} 
+		}
+		cin>>n;
+	 	for(int i=0;i<n;i++){
+		 	cin>>que[i];
+			int x=X[city[que[i]]];
+			int y=Y[city[que[i]]];
+			A[x]
+		}
+	 	
+	 	
 	}
 return 0;
 }
