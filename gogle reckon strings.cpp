@@ -13,7 +13,7 @@ int main(){
 	 	int n,m;
 	 	cin>>n>>m;
 		map<char, set<char>>mp;
-	 	unordered_map<string, int>sp;
+	 	//unordered_map<string, int>sp;
 	 	for(int i=0;i<m;i++){
 			char c,d;
 			cin>>c>>d;
@@ -30,31 +30,31 @@ int main(){
 				}
 			}
 		}
+	
 		vector<ll int>ans(n,0);
-		vector<vector<ll int>>dp(n+1,vector<ll int>(27,0));
+		vector<vector<ll int>>dp(n+1,vector<ll int>(26,0));
 		ans[0]=26;
 		for(int i=0;i<26;i++)dp[0][i]=1;
-		
 		for(int i=0;i<26;i++){
 			char t=('a'+i);
 			dp[1][i]=26-mp[t].size();
 			ans[1]= (ans[1]+dp[1][i])%mod;
 		//	cout<<mp[t].size()<<" ";
 		}
-		//cout<<endl;
-		
+	
 		for(int i=2;i<n;i++){
 			for(int j=0;j<26;j++){
 				dp[i][j]+=ans[i-1];
 				char t='a'+j;
 				for(char k:mp[t]){
 					dp[i][j]=(mod+dp[i][j]- dp[i-1][k-'a'])%mod;
-					ans[i]= (ans[i]+dp[i][j])%mod;
 				}
+				ans[i]= (ans[i]+dp[i][j])%mod;
 			}
 		}
-		cout<<ans[0]<<' '<<ans[1]<<" "<<ans[2]<<" "<<ans[3]<<" "<<ans[4];
-		//cout<<ans[n-1]<<endl;
+
+		//cout<<ans[0]<<' '<<ans[1]<<" "<<ans[2]<<" "<<ans[3]<<" "<<ans[4];
+		cout<<ans[n-1]<<endl;
 	}
 return 0;
 }

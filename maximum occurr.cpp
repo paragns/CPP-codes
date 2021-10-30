@@ -6,7 +6,7 @@ using namespace std;
 #define minf INT_MIN
 const int N=1e5+1; 
 vector<vector<ll int>>fen;
-void update(int r,int x,int val){
+void update(int r, int x, int val){
 	for(x;x<N;x+=(x&(-x))){
 		fen[r][x]+=val;
 	}

@@ -9,7 +9,7 @@ bool is_safe(int x,int y ,int n, int m){
 	else return 0;
 }
 int go(int x,int y, vector<vector<int>> &A, int n, int m,vector<vector<int>> &dp){
-	if( dp[x][y]!=-1){ return dp[x][y]; }
+	if( dp[x][y]!=-1){return dp[x][y]; }
 	if(x==n and y==m )return dp[x][y]=0;
 	if(!is_safe(x,y,n,m) or A[x][y]==0)return minf;
 	int l=go(x+A[x][y],y,A,n,m,dp);
@@ -19,8 +19,7 @@ int go(int x,int y, vector<vector<int>> &A, int n, int m,vector<vector<int>> &dp
 	else if(r==minf)return dp[x][y]=1+l;
 	else return dp[x][y]=1+min(l,r);
 }
-int main()
-{
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 	int t=1;
@@ -35,7 +34,5 @@ int main()
 		}
 	 	cout<<max(-1,go(1,1,A, n,m,dp))<<'\n';
 	 }
-	
-	
 return 0;
 }
