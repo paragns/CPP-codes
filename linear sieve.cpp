@@ -4,7 +4,7 @@ using namespace std;
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-#define N=100005
+#define N 100005
 vector<int>primes,spf(N,0);
 void sieve(){
 	spf[0]=spf[1]=1;
