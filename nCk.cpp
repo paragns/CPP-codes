@@ -1,29 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
-# define ll long long
+#define ll long long
 #define mod 1000000007
 #define inf INT_MAX
 #define minf INT_MIN
-int main()
-{
+int nck(int n, int k){
+    int res = 1;
+    if (k > n - k) k = n - k; // Since C(n, k) = C(n, n-k)
+    for (int i = 0; i < k; ++i) {
+    	res *= (n - i);
+        res /= (i + 1);
+    }
+    return res;
+} 
+int main(){
 	ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-	int T=1;
-	//cin>>T;
-	 while(T--){
-	 	int n,k; cin>>n>>k;
-	 	vector<int>dp1(k+2,0),dp2(k+2,0);
-	 	dp1[0]=1,dp2[0]=1;
-	 	for(int i=1;i<=n;i++){
-			for(int j=1;j<=k;j++){
-				dp2[j]=dp1[j]+dp1[j-1];
-			}
-			dp1=dp2; 
-		}
-	 	cout<<dp2[k];
-	 	
-	 }
-	
-	
+	 int n,k;
+	 cin>>n>>k;
+	 nck(n,k);	
 return 0;
 }
