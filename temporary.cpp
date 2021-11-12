@@ -10,11 +10,11 @@ int main(){
 	ll int T=1;
 	//cin>>T;
 	 while(T--){
-	 	int n,k;
-	 	cin>>n>>k;
-	 	int m=(1<<k-1);
-	 	
-	 	
+	 	int n;
+	 	cin>>n;
+	 	vector<int>A(n);
+	 	for(int i=0;i<n;i++)cin>>A[i];
+	 	for(int i=0;i<=n;i++)cout<<A[i]<<" ";
 	}
 return 0;
 }

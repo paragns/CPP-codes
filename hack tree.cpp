@@ -2,10 +2,10 @@
 using namespace std;
 int ans;
 void dfs(int node,auto &vis,auto &cost,vector<vector<int>>&adj, int &sum,auto &mp, int k) {
-       vis[node]=1
-	   sum+=cost[node-1];
+       vis[node]=1;
+	   sum+=cost[node-1];//
   		ans+=mp[sum%k];
-       mp[sum%k]++;
+       mp[sum%k]++;//
 		for(int i:adj[node]){
 			if(vis[i])continue;
 			dfs(i,vis,cost,adj,sum,mp, k);  
@@ -32,7 +32,7 @@ int main(){
 		adj[k].push_back(l);
 	} 
 	int k;cin>>k;  
-	int sum=0;
+	int sum=0; 
 	map<int, int>mp;
 	mp[0]++;
 	dfs(1,vis,cost,adj,sum,mp, k);
