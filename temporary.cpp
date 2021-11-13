@@ -12,9 +12,18 @@ int main(){
 	 while(T--){
 	 	int n;
 	 	cin>>n;
-	 	vector<int>A(n);
-	 	for(int i=0;i<n;i++)cin>>A[i];
-	 	for(int i=0;i<=n;i++)cout<<A[i]<<" ";
+	 	int a,b,c;
+	 	cin>>a>>b>>c;
+	 	cout<<a<<" "<<b<<" "<<c<<" ";
+		 for(int i=0;i<n;i++){
+		 	int d=((c|b)^a);
+			 cout<<d<<" ";
+		 	a=b;
+		 	b=c;
+		 	c=d;
+		}
+	 	//n=((4|10)^1);
+	 	//cout<<n;
 	}
 return 0;
 }

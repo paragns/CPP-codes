@@ -1,8 +1,3 @@
-/*Third problem me approach same hi hai, bas memory efficient banana hai.
-Since for a particular row of the 3D matrix depends only on the previous one,
-we use "Memoize and forget" approach. 
-~~~~~
-*/
 #include <bits/stdc++.h>
 using namespace std;
 # define ll long long
@@ -20,9 +15,7 @@ int main(){
 			
 vector<vector<vector<int>>>dp(2,vector<vector<int>>(n+1,vector<int>(n+1,minf)));
 vector<vector<int>>temp(n+1,vector<int>(n+1,minf));
-
 dp[1][1][1]=A[1][1];
-	
 	for(int i=1;i<=n;i++){
 		for(int j=1;j<=n;j++){
 			for(int x=1;x<=n;x++){
@@ -32,7 +25,6 @@ dp[1][1][1]=A[1][1];
 				int m=dp[0][j][x];
 				int n= dp[1][j-1][x-1];
 				int o=dp[1][j-1][x];
-				
 				int max_val=max(l,max(m,max(n,o)));
 				if(max_val<0)continue;
 				dp[1][j][x]=max_val+A[i][j];
