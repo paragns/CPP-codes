@@ -12,7 +12,7 @@ int main(){
 	 while(T--){
 	 	int n;
 	 	cin>>n;
-	 	
+	 	cout<<log10(10);
 	}
 return 0;
 }
