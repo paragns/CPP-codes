@@ -5,18 +5,18 @@ int LCA(int a, int b, auto &spar, auto &lev){
 	if(lev[a]>lev[b])swap(a,b);
 	int l=lev[b]-lev[a];
 	while(l!=0){
-		int t=log2(l);
-		l=l-(pow(2,t));
+		int t=log2(l); 
+		l=l-(1<<t);
 		b=spar[b][t];
 	}
 	if(a==b)return a;
-	int high=spar[0].size(),low=0;
-	while(low<high){
-		int mid=low+(high-low)/2;
-		if(spar[a][mid]==spar[b][mid])high=mid;
-		else low=mid+1;
+	
+	for(int i=spar[0].size()-1;i>=0;i--){
+		if(spar[a][i]!=-1 and (spar[a][i]!=spar[b][i])){
+			a=spar[a][i]; b=spar[b][i];
+		}
 	}
-	return spar[a][high];
+	return spar[a][0];
 }
 vector<int>lev;
 void dfs(int node, int p, int l, auto &ord, auto &par){
