@@ -12,7 +12,6 @@ int main(){
 				return 0;	
 			}
 		}
-		
 	}
 	string ans="";
 	for(int i=0;i<n;i++)ans+='@';
