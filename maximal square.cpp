@@ -24,7 +24,6 @@ int main()
 			ans=max(ans,A[0][j]);
 	for(int i=1;i<r;i++)
 		for(int j=1;j<c;j++){
-			
 		if(A[i][j-1] and A[i-1][j-1] and A[i-1][j] and A[i][j])A[i][j]=1+min(A[i][j-1],min( A[i-1][j-1],A[i-1][j]));
 		ans=max(ans,A[i][j]);
 		//cout<<ans<<"*"<<i<<" "<<j<<endl;

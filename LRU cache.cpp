@@ -23,7 +23,6 @@ public:
         m[key] = p;
         return p.second;
     }
-    
     void put(int key, int value) {
         if (m.find(key) != m.end()) {
             s.erase({m[key].first, key});
