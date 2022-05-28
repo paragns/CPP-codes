@@ -1,37 +1,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// Driver code
+
+
 int main()
 {
-	ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
 	
 	int n;
-	cin >>n;
-	int extend[n];
+	cin>>n;
 	
-	memset(extend,-1,sizeof(extend));
+	string arr[n];
+	map<char,int> m;
+	
 	
 	for(int i=0;i<n;i++){
-		int l;
-		cin>>l;
-		int left=max(i-l,0);
-		int right=min(i+l+1,n);
-		extend[left]=max(extend[left],right);
+		cin>>arr[i];
+		for(int j=0;j<arr[i].length();j++){
+			m[arr[i][j]]++;
+		}
 	}
-	int ans=1;
-	int right=extend[0];
-	int next=0;
-	 for(int i=0;i<n;i++){
-        next = max(next,extend[i]);
-    
-        if (i == right){
-            ans++;
-            right = next;
-        }
-    }
-	cout<<ans;
+	int flag = 1;
+	for(auto x:m){
+		if(x.second%n != 0){
+			cout<<"Not Possbile";
+			flag=0;
+			break;
+		}
+	}
+	
+	if(flag){
+		cout<<"Possible";
+	}
+	
+	
 return 0;
 }
 
